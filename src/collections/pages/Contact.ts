@@ -6,30 +6,5 @@ export const ContactPage: GlobalConfig = {
   admin: {
     group: 'Pages',
   },
-  fields: [
-    ...BasePageFields,
-    {
-      name: 'sections',
-      type: 'blocks',
-      blocks: [
-        {
-          slug: 'contactFormSection',
-          fields: [
-            {
-              name: 'heading',
-              type: 'text',
-              required: true,
-              defaultValue: 'Contact Us',
-            },
-            {
-              name: 'form',
-              type: 'relationship',
-              relationTo: 'form',
-              required: true,
-            },
-          ],
-        },
-      ],
-    },
-  ],
+  fields: [...BasePageFields],
 }

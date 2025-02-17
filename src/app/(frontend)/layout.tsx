@@ -1,18 +1,32 @@
 import React from 'react'
 import './styles.css'
+import { ThemeProvider } from '@/components/theme-provider'
+import { Footer } from '@/components/blocks/footer'
+import { Navbar } from '@/components/blocks/navbar'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  description: 'Panagiotis Pitsikoulis - Portfolio',
+  title: 'Specializing in web design and development',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <main>{children}</main>
+        <main className="px-4 md:px-[3svw]">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </main>
       </body>
     </html>
   )

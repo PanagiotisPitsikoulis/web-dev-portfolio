@@ -94,7 +94,48 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.border-grid {
+  border-style: dashed;
+  border-color: hsl(var(--border) / .5);
+}
+
+.border-grid:is(.dark *) {
+  border-color: hsl(var(--border));
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1536px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+container-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1400px;
+  border-style: dashed;
+  border-color: hsl(var(--border) / .7);
+}
+
+.container-wrapper:is(.dark *) {
+  border-color: hsl(var(--border));
+}
+
+.header {
+  h1 {
+    @apply text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1];
+  }
+
+  p {
+    @apply max-w-2xl text-lg font-light text-foreground;
   }
 }
